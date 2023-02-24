@@ -12,6 +12,27 @@ $(document).ready(function () {
 
     const viewModel1 = new ViewModel();
     ko.applyBindings(viewModel1, document.getElementById('viewModel1'));
+
+    // click Counter
+    class ClickCounter {
+        constructor(){
+            this.tooManyClicks = ko.observable(false);
+            this.counter = ko.observable(0);
+            this.clickEvent = function() {
+                this.counter(this.counter()+1);
+                if(this.counter() >= 3){
+                    this.tooManyClicks(true);
+                }
+            };
+            this.reset = function(){
+                this.tooManyClicks(false);
+                this.counter(0);
+            }
+        }
+        
+    }
+
+    ko.applyBindings(new ClickCounter(), document.getElementById('clickCounter'))
     
 });
 

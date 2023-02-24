@@ -12,6 +12,16 @@
     <p>Last name: <input data-bind="value: lastName" /></p>
     <h2>Hello, <span data-bind="text: fullName">!</h2>
   </div>
+
+  <div id="clickCounter">
+    <p>You've clicked <span data-bind="text: counter"></span> times</p>
+    <button data-bind="click: clickEvent, disable: tooManyClicks">Click me</button>
+    <div id="message">
+      <p>That's too many clicks! Please stop</p>
+      <button data-bind="click: reset">Reset clicks</button>
+    </div>
+  </div>
+
 </body>
 
 </html>
