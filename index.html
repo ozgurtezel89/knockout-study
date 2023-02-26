@@ -16,7 +16,7 @@
   <div id="clickCounter">
     <p>You've clicked <span data-bind="text: counter"></span> times</p>
     <button data-bind="click: clickEvent, disable: tooManyClicks">Click me</button>
-    <div id="message">
+    <div data-bind="visible: showMessage">
       <p>That's too many clicks! Please stop</p>
       <button data-bind="click: reset">Reset clicks</button>
     </div>

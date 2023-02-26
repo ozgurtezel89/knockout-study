@@ -18,15 +18,18 @@ $(document).ready(function () {
         constructor(){
             this.tooManyClicks = ko.observable(false);
             this.counter = ko.observable(0);
+            this.showMessage = ko.observable(false)
             this.clickEvent = function() {
                 this.counter(this.counter()+1);
                 if(this.counter() >= 3){
                     this.tooManyClicks(true);
+                    this.showMessage(true);
                 }
             };
             this.reset = function(){
                 this.tooManyClicks(false);
                 this.counter(0);
+                this.showMessage(false);
             }
         }
         
